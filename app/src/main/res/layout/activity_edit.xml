@@ -37,7 +37,7 @@
                 tools:ignore="TouchTargetSizeCheck,DuplicateClickableBoundsCheck" />
 
             <EditText
-                android:id="@+id/edTitle4"
+                android:id="@+id/edDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -81,7 +81,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/bNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
