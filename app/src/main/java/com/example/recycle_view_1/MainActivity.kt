@@ -3,14 +3,15 @@ package com.example.recycle_view_1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.recycle_view_1.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), PlantAdapter.Listener {
     lateinit var binding: ActivityMainBinding
-    private val adapter = PlantAdapter()
+    private val adapter = PlantAdapter(this)
     private var editLauncher: ActivityResultLauncher<Intent>? = null
 
 
@@ -33,5 +34,9 @@ class MainActivity : AppCompatActivity() {
         buttonAdd.setOnClickListener(){
             editLauncher?.launch(Intent(this@MainActivity, EditActivity::class.java))
         }
+    }
+
+    override fun onClick(plant: Plant) {
+        Toast.makeText(this, "Pressed on ${plant.title}", Toast.LENGTH_LONG).show()
     }
 }
