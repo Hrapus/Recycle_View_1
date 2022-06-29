@@ -37,6 +37,8 @@ class MainActivity : AppCompatActivity(), PlantAdapter.Listener {
     }
 
     override fun onClick(plant: Plant) {
-        Toast.makeText(this, "Pressed on ${plant.title}", Toast.LENGTH_LONG).show()
+        startActivity(Intent(this, ContentActivity::class.java).apply {
+            putExtra("item", plant)
+        })
     }
 }
